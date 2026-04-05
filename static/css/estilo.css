@@ -302,3 +302,44 @@ body.clase-index footer {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
+
+/* --- Estilos para imágenes de perfil (Guido van Rossum) --- */
+.img-perfil {
+    display: block;
+    /* Elimina el espacio inline por defecto */
+    max-width: 300px;
+    /* Tamaño máximo */
+    width: 100%;
+    /* Se adapta si la pantalla es más pequeña */
+    height: auto;
+    /* Mantiene la proporción */
+    margin: 20px auto;
+    /* Centra la imagen horizontalmente */
+    border-radius: 8px;
+    /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+}
+
+/* Versión para móviles */
+@media (max-width: 768px) {
+    .img-perfil {
+        max-width: 200px;
+        margin: 15px auto;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .img-perfil {
+        max-width: 200px;
+        margin: 15px auto;
+    }
+}
+
+/* Responsive: más pequeña en móviles */
+@media (max-width: 768px) {
+    .img-perfil {
+        max-width: 200px;
+    }
+}
