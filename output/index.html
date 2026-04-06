@@ -5,23 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Índice - AtriumEdu - Taller Python</title>
-    <!-- Con este link se inserta el icono en el título de la pagina "Blog de Café. " 
-        https://imagen.online-convert.com/es/convertir/png-a-ico. -->
-    <link rel="shortcut icon" href="../static/icons/introduccionPython.ico" type="image/x-icon">
-    <!-- Este es el preload del google font. -->
-    <link rel="preload" href="https://fonts.googleapis.com" as="font">
+    <link rel="shortcut icon" href="../static/icons/index.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <!-- Este es el preload del google font. -->
-    <link rel="preload" href="https://fonts.gstatic.com" crossorigin="crossorigin" as="font">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- Este es el preload del google font. -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap"
-        crossorigin="crossorigin" as="font">
-    <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap">
-    <!-- Los preloads nos permite recargar más rápidamente. Para este caso de los estilos. -->
-    <!-- El prefetch nos permite llevar la siguiente página que esperaríamos (Una especie de intuición) que el usuario 
-        visite más rápidamente y/o para darle una mejor experiencia. (Google analytics) -->
-    <link rel="prefetch" href="clase_1.html" as="document">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap">
+    <!-- Agrega esto en el <head> -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="prefetch" href="index.html" as="document">
     <link rel="stylesheet" href="../static/css/estilo.css">
 </head>
 
@@ -29,83 +19,104 @@
     <div class="contenedor">
         <header>
             <h1>🐍 AtriumEdu - Taller Python</h1>
+
+            <!-- Navegación -->
+            <nav class="menu-principal">
+                <ul>
+                    <li><a href="index.html" class="activo">🏠 Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#">📚 Clases ▾</a>
+                        <div class="dropdown-content">
+                            <a href="introduccion.html">🐍 Introducción</a>
+                            <a href="variables.html">🔢 Variables</a>
+                            <a href="estruCondicio.html">🔀 Condicionales</a>
+                            <a href="colecciones.html">📚 Colecciones</a>
+                            <a href="listas.html">📋 Listas</a>
+                            <a href="tuplas.html">🔗 Tuplas</a>
+                            <a href="conjuntos.html">🧩 Conjuntos</a>
+                            <a href="diccionarios.html">📖 Diccionarios</a>
+                            <a href="bucles.html">🔁 Bucles</a>
+                            <a href="patroMental.html">🧠 Patrones Mentales</a>
+                            <a href="ejercicios.html">📝 Ejercicios</a>
+                        </div>
+                    </li>
+                    <li><a href="https://campusatrium.com" target="_blank">🎓 Campus</a></li>
+                    <!-- 🔥 BOTÓN MODO OSCURO -->
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle-btn">🌙 Oscuro</button>
+                    </li>
+                </ul>
+            </nav>
+
             <div class="info-meta">
                 <p><strong>Alumno:</strong> Gustavo Vallejo</p>
+                <p><strong>Inicio:</strong> jueves, 26/02/2026</p>
                 <p><strong>Estado:</strong> En progreso</p>
             </div>
         </header>
 
         <main>
-            <h2>Selecciona una clase para comenzar</h2>
-            <div class="grid-clases">
-
-                <div class="card">
-                    <div class="card-header clase-1">
-                        <h3>Clase 1</h3>
-                        <span>26 de Febrero</span>
-                    </div>
-                    <div class="card-body">
-                        <h4>Introducción a Python</h4>
-                        <p>Temas: ¿Qué es Python?, Instalación y configuración...</p>
-                        <a href="clase_1.html" class="btn btn-clase-1">Ver Clase ➜</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header clase-2">
-                        <h3>Clase 2</h3>
-                        <span>5 de Marzo</span>
-                    </div>
-                    <div class="card-body">
-                        <h4>Taller Python 1</h4>
-                        <p>Temas: Estructuras de control (if, else), Operadores lógicos...</p>
-                        <a href="clase_2.html" class="btn btn-clase-2">Ver Clase ➜</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header clase-3">
-                        <h3>Clase 3</h3>
-                        <span>12 de Marzo</span>
-                    </div>
-                    <div class="card-body">
-                        <h4>Taller Python 2</h4>
-                        <p>Temas: Bucles (for, while), Iteraciones y rangos...</p>
-                        <a href="clase_3.html" class="btn btn-clase-3">Ver Clase ➜</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header clase-4">
-                        <h3>Clase 4</h3>
-                        <span>19 de Marzo</span>
-                    </div>
-                    <div class="card-body">
-                        <h4>Taller Python 3</h4>
-                        <p>Temas: Listas y tuplas, Diccionarios...</p>
-                        <a href="clase_4.html" class="btn btn-clase-4">Ver Clase ➜</a>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="card-header clase-5">
-                        <h3>Clase 5</h3>
-                        <span>26 de Marzo</span>
-                    </div>
-                    <div class="card-body">
-                        <h4>Taller Python 4</h4>
-                        <p>Temas: Funciones, Módulos y paquetes...</p>
-                        <a href="clase_5.html" class="btn btn-clase-5">Ver Clase ➜</a>
-                    </div>
-                </div>
-
+            <!-- 🔥 BUSCADOR -->
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="🔍 Buscar clase por nombre o tema...">
             </div>
+
+            <!-- 🔥 BARRA DE PROGRESO (AGREGAR AQUÍ) -->
+            <div class="progreso-container">
+                <div class="progreso-info">
+                    <span>📚 Clases completadas</span>
+                    <span id="progreso-texto">0 de 11 (0%)</span>
+                </div>
+                <div class="barra-progreso">
+                    <div class="barra-llena" id="barra-progreso" style="width: 0%;"></div>
+                </div>
+                <button id="reset-progreso" class="btn-reset">🔄 Reiniciar Progreso</button>
+            </div>
+
+            <h2>Selecciona una clase para comenzar</h2>
+
         </main>
 
+        <div class="navegacion-clase"
+            style="margin-top: 40px; padding: 20px; background: #f9f9f9; border-radius: 8px; border-left: 4px solid var(--color-primario);">
+            <h3>📍 ¿Dónde estás?</h3>
+            <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 15px;">
+
+                <!-- Botón Volver al Índice -->
+                <a href="index.html" class="btn-nav btn-volver">
+                    ⬅ Volver al Índice
+                </a>
+
+                <!-- Botón Siguiente Clase (si existe) -->
+                <!-- Ajusta el href según el nombre real de tu siguiente archivo -->
+                <a href="variables.html" class="btn-nav btn-siguiente">
+                    Siguiente: Variables ➡
+                </a>
+
+            </div>
+        </div>
+        <!-- 🔥 BARRA DE PROGRESO -->
+        <div class="progreso-container">
+            <div class="progreso-info">
+                <span>📚 Clases completadas</span>
+                <span id="progreso-texto">0 de 11 (0%)</span>
+            </div>
+            <div class="barra-progreso">
+                <div class="barra-llena" id="barra-progreso" style="width: 0%;"></div>
+            </div>
+            <button id="reset-progreso" class="btn-reset">🔄 Reiniciar Progreso</button>
+        </div>
         <footer>
-            <p>© 2026 AtriumEdu - Taller Python | Creado con mucho respeto para los estudiantes</p>
+            <p>© 2026 AtriumEdu - Taller Python | Creado con ❤️ para estudiantes</p>
+            <p><a href="index.html">⬅ Volver al Índice</a></p>
         </footer>
     </div>
+
+    <!-- Scripts -->
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/nav.js"></script>
+
+</html>
 </body>
 
 </html>

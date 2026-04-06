@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 2: Las variables en Python</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="../static/icons/variables.ico" type="image/x-icon">
+
+    <!-- Google Fonts Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Hoja de estilos principal (UNICA) -->
+    <link rel="stylesheet" href="../static/css/estilo.css">
+
+    <!-- Prefetch para próxima página (mejora experiencia de usuario) -->
+    <link rel="prefetch" href="clase_3.html" as="document">
+</head>
+
+<body class="clase-1">
+    <div class="contenedor">
+        <header>
+            <h1>🐍 Clase 2: Variables en Python</h1>
+            <div class="info-meta">
+                <p><strong>Fecha:</strong> 6 de abril de 2026</p>
+                <p><strong>Autor:</strong> Gustavo Vallejo</p>
+            </div>
+        </header>
+
+        <main>
+            <h2>Temas de la sesión</h2>
+            <ul>
+                <li>Primeros pasos</li>
+                <li>Instalación y configuración</li>
+                <li>Hola Mundo</li>
+                <li>Variables y tipos de datos</li>
+            </ul>
+
+            <div>
+                <h2><strong>Primeros pasos</strong></h2>
+                <p>
+                <div>
+                    <h3>Primeros pasos</h3>
+                    <p>Primeros pasos con variables</p>
+                    <p> es un lenguaje no tipado. Por tanto, no es necesario (ni posible) definir los tipos de datos
+                        utilizados al
+                        declarar variables.</p>
+                    <p>En general, en Python las variables se declaran en el momento en el que éstas van a usarse, por
+                        lo
+                        que la
+                        declaración va
+                        acompañada del valor que se asigna.</p>
+                    <p># El siguiente es un ejemplo de declaración de una variable.
+                        a = 10
+                        print("'a' vale:")
+                        print(a)
+                        print("")
+
+                        a = "abcd"
+                        print("Ahora 'a' vale:")
+                        print(a)</p>
+                </div>
+
+                <!-- IMAGEN CON CLASE CORREGIDA -->
+                <div style="text-align: center; margin: 30px 0;">
+                    <img src="../static/images/Guido_van_Rossum_OSCON_2006.png"
+                        alt="Guido van Rossum, creador de Python" class="img-perfil">
+                    <p style="font-style: italic; color: #666; margin-top: 10px;">
+                    <p><em>Guido van Rossum. (2006). Guido van Rossum OSCON 2006 [Photograph]. Wikimedia Commons.
+                            https://commons.wikimedia.org/wiki/File:Guido_van_Rossum_OSCON_2006.jpg</em></p>
+                    </p>
+                </div>
+
+                <p>Para muchos el lenguaje <a href="https://www.python.org/" target="_blank"
+                        rel="noopener noreferrer">Python</a> es conocido por su simplicidad y legibilidad, lo que lo
+                    hace ideal
+                    para
+                    principiantes, pero
+                    también es poderoso y versátil, utilizado por desarrolladores profesionales en una amplia variedad
+                    de
+                    aplicaciones. Python
+                    es un <a
+                        href="https://www.universidadviu.com/es/actualidad/nuestros-expertos/lenguaje-de-alto-nivel-los-mas-utilizados"
+                        target="_blank" rel="noopener noreferrer">lenguaje de programación de alto nivel</a>,
+                    interpretado, de código abierto y propósito general.
+                    Además de su sintaxis clara y legible, Python es conocido por su amplia biblioteca estándar y su
+                    gran
+                    comunidad de desarrolladores, lo que facilita la resolución de problemas y el desarrollo de
+                    proyectos
+                    complejos.
+                    Python se utiliza en diversos campos, incluyendo desarrollo web, análisis de datos, inteligencia
+                    artificial, automatización de tareas, desarrollo de software y más. Es un lenguaje popular tanto
+                    para
+                    principiantes como para profesionales debido a su versatilidad y facilidad de uso.</p>
+
+                <p>Python se utiliza principalmente para desarrollo web (con frameworks como <a
+                        href="https://www.djangoproject.com/" target="_blank" rel="noopener noreferrer">Django</a> y <a
+                        href="https://flask.palletsprojects.com/en/stable/" target="_blank"
+                        rel="noopener noreferrer">Flask</a>), análisis
+                    de
+                    datos
+                    y
+                    ciencia de datos
+                    (gracias a bibliotecas como <a href="https://pandas.pydata.org/" target="_blank"
+                        rel="noopener noreferrer">Pandas</a> y <a href="https://numpy.org/es/" target="_blank"
+                        rel="noopener noreferrer">NumPy</a>), inteligencia artificial y aprendizaje automático
+                    (usando <a href="https://www.tensorflow.org/?hl=es-419" target="_blank"
+                        rel="noopener noreferrer">TensorFlow</a> y
+                    <a href="https://keras.io/" target="_blank" rel="noopener noreferrer">Keras</a>), así como para la
+                    automatización de tareas y la creación de scripts.
+                </p>
+
+                <p>Las aplicaciones abarcan desde la visualización de datos y el control de robots hasta la gestión de
+                    bases
+                    de
+                    datos y el
+                    desarrollo de software en diversos sectores como marketing, salud y finanzas. Es ampliamente
+                    adoptado
+                    por empresas como <a href="https://docs.cloud.google.com/python/docs?hl=es" target="_blank"
+                        rel="noopener noreferrer">Google</a>, <a href="https://www.netflix.com/" target="_blank"
+                        rel="noopener noreferrer">Netflix</a> y <a href="https://www.nasa.gov/" target="_blank"
+                        rel="noopener noreferrer">NASA</a> debido a su versatilidad, gran comunidad de soporte y
+                    capacidad para ejecutar proyectos complejos con menos líneas de código.</p>
+            </div>
+
+            <div>
+                <h2>Historia</h2>
+                <p>Ciertamente, <a href="https://python-history.blogspot.com/2009/01/introduction-and-overview.html"
+                        target="_blank" rel="noopener noreferrer">La historia</a> del lenguaje de programación Python se
+                    remonta hacia finales de los 80s y
+                    principios de los 90s. Su implementación comenzó en diciembre de 1989 cuando, en Navidad,
+                    Guido
+                    van Rossum, que trabajaba en el <a href="https://www.w3.org/" target="_blank"
+                        rel="noopener noreferrer">CWI</a> (un centro
+                    de investigación holandés de carácter oficial que, entre otras cosas, actualmente alberga la oficina
+                    central del W3C),
+                    decidió empezar el proyecto como un pasatiempo dándole continuidad al lenguaje de programación <a
+                        href="https://homepages.cwi.nl/~steven/abc/" target="_blank" rel="noopener noreferrer">ABC</a>
+                    del que había formado
+                    parte del equipo de desarrollo en el CWI.Dicho lenguaje se enfocaba en ser fácil de usar y
+                    aprender manteniendo
+                    potencia en su desempeño, pero el hardware disponible en la época de su creación hacía difícil su
+                    uso
+                    y el proyecto no
+                    trascendió como se esperaba. Van Rossum es por tanto el autor principal de Python y continúa
+                    ejerciendo un rol central
+                    decidiendo la dirección del lenguaje; en la comunidad de Python se le conoce como Benevolente
+                    Dictador Vitalicio (en
+                    inglés: Benevolent Dictator for Life, BDFL). El nombre "Python" viene dado por la afición de Van
+                    Rossum al grupo <a href="https://en.wikipedia.org/wiki/Monty_Python%27s_Fliegender_Zirkus"
+                        target="_blank" rel="noopener noreferrer">Monty</a>
+                    Python.</p>
+            </div>
+
+            <div class="destacado">
+                <p><strong>Nota:</strong> Python es un lenguaje de programación interpretado, multiparadigma y de alto
+                    nivel.</p>
+                <p>En esta sesión conocimos algunos conceptos básicos y la historia del lenguaje.</p>
+            </div>
+
+            <div>
+                <h3>Primeros pasos</h3>
+                <p>Primeros pasos con variables</p>
+                <p> es un lenguaje no tipado. Por tanto, no es necesario (ni posible) definir los tipos de datos
+                    utilizados al
+                    declarar variables.</p>
+                <p>En general, en Python las variables se declaran en el momento en el que éstas van a usarse, por lo
+                    que la
+                    declaración va
+                    acompañada del valor que se asigna.</p>
+                <p># El siguiente es un ejemplo de declaración de una variable.
+                    a = 10
+                    print("'a' vale:")
+                    print(a)
+                    print("")
+
+                    a = "abcd"
+                    print("Ahora 'a' vale:")
+                    print(a)</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>© 2026 AtriumEdu - Taller Python | Creado con ❤️ para estudiantes</p>
+            <p><a href="index.html">⬅ Volver al Índice</a></p>
+            <p><a href="contenido">⬅ Volver al Índice</a></p>
+
+        </footer>
+    </div>
+    <!-- Ojo JavaScript antes de cerrar body -->
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/nav.js"></script>
+</body>
+
+</html>

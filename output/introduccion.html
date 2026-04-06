@@ -1,30 +1,69 @@
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bienvenido a AtriumEdu - Taller Python</title>
+    <title>Introducción a Python - AtriumEdu</title>
+    <link rel="shortcut icon" href="../static/icons/introduccionPython.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap">
     <link rel="stylesheet" href="../static/css/estilo.css">
 </head>
-<body>
+
+<body class="clase-1">
     <div class="contenedor">
         <header>
-            <h1>🐍 Bienvenido a AtriumEdu - Taller Python</h1>
+            <h1>🐍 Introducción a Python</h1>
+
+            <!-- 🔥 Navegación (igual que index.html) -->
+            <nav class="menu-principal">
+                <ul>
+                    <li><a href="index.html">🏠 Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#">📚 Clases ▾</a>
+                        <div class="dropdown-content">
+                            <a href="introduccion.html" class="activo">🐍 Introducción</a>
+                            <a href="variables.html">🔢 Variables</a>
+                            <a href="estruCondicio.html">🔀 Condicionales</a>
+                            <a href="colecciones.html">📚 Colecciones</a>
+                            <a href="listas.html">📋 Listas</a>
+                            <a href="tuplas.html">🔗 Tuplas</a>
+                            <a href="conjuntos.html">🧩 Conjuntos</a>
+                            <a href="diccionarios.html">📖 Diccionarios</a>
+                            <a href="bucles.html">🔁 Bucles</a>
+                            <a href="patroMental.html">🧠 Patrones Mentales</a>
+                            <a href="ejercicios.html">📝 Ejercicios</a>
+                        </div>
+                    </li>
+                    <li><a href="https://campusatrium.com" target="_blank">🎓 Campus</a></li>
+                    <!-- 🔥 Botón Modo Oscuro -->
+                    <li>
+                        <button id="theme-toggle" class="theme-toggle-btn">🌙 Oscuro</button>
+                    </li>
+                </ul>
+            </nav>
+
             <div class="info-meta">
-                <p><strong>Autor:</strong> Gustavo Vallejo</p>
+                <p><strong>Alumno:</strong> Gustavo Vallejo</p>
                 <p><strong>Fecha:</strong> 03 de Abril de 2026</p>
+                <p><strong>Clase:</strong> 1 de 11</p>
             </div>
         </header>
-        
+
         <main>
             <h2>¿Qué es Python?</h2>
-            <p>Python es un lenguaje de programación <strong>interpretado</strong>, <strong>multiparadigma</strong> y de <strong>alto nivel</strong>. Se caracteriza por su sintaxis clara y legible, lo que lo hace ideal para estudiantes.</p>
-            
+            <p>Python es un lenguaje de programación <strong>interpretado</strong>, <strong>multiparadigma</strong> y de
+                <strong>alto nivel</strong>. Se caracteriza por su sintaxis clara y legible, lo que lo hace ideal para
+                estudiantes.
+            </p>
+
             <div class="destacado">
-                <strong>💡 Sabías que...</strong> Python fue creado por Guido van Rossum y lanzado oficialmente en 1991. Su nombre viene de "Monty Python", un grupo de comedia británico.
+                <strong>💡 Sabías que...</strong> Python fue creado por Guido van Rossum y lanzado oficialmente en 1991.
+                Su nombre viene de "Monty Python", un grupo de comedia británico.
             </div>
-            
+
             <h3>Características principales:</h3>
             <ul>
                 <li>Facilidad de aprendizaje y uso</li>
@@ -43,17 +82,37 @@
                 <li>Multiplataforma: Mac OS X, Windows, Linux, Unix, Android, iOS</li>
                 <li><strong>Software libre:</strong> Sin costo y con licencia de código abierto</li>
             </ul>
-            
+
             <h3>Información técnica adicional:</h3>
-            <p>Tipos de datos básicos: números (enteros, flotantes, complejos), cadenas (ASCII y Unicode), listas y diccionarios.</p>
+            <p>Tipos de datos básicos: números (enteros, flotantes, complejos), cadenas (ASCII y Unicode), listas y
+                diccionarios.</p>
             <p>Soporta programación orientada a objetos con clases y herencia múltiple.</p>
             <p>Manejo de excepciones para errores más limpios.</p>
             <p>Gestión automática de memoria.</p>
+
+            <!-- 🔥 Navegación al final de la clase -->
+            <div class="navegacion-clase">
+                <h3>📍 ¿Dónde estás?</h3>
+                <div class="navegacion-botones">
+                    <a href="index.html" class="btn-nav btn-volver">
+                        ⬅ Volver al Índice
+                    </a>
+                    <a href="variables.html" class="btn-nav btn-siguiente">
+                        Siguiente: Variables ➡
+                    </a>
+                </div>
+            </div>
         </main>
-        
+
         <footer>
-            <p>© 2026 AtriumEdu - Taller Python | Creado con ❤️ para estudiantes</p>
+            <p>© 2026 AtriumEdu - Taller Python | Creado con todo respeto para losestudiantes</p>
+            <p>Clase 1 de 11 | <a href="index.html">⬅ Volver al Índice</a></p>
         </footer>
     </div>
+
+    <!-- Scripts -->
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/nav.js"></script>
 </body>
+
 </html>

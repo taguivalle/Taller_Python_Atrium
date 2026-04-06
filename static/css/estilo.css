@@ -2,7 +2,7 @@
    ESTILO PARA ATRIUMEDU - TALLER PYTHON
    ============================================ */
 
-/* --- Variables por defecto (Clase 1) --- */
+/* --- Variables por defecto --- */
 :root {
     --color-primario: #4A90E2;
     --color-secundario: #50E3C2;
@@ -23,6 +23,117 @@ body {
     transition: all 0.3s ease;
 }
 
+/* ==================== NAV PRINCIPAL ==================== */
+.menu-principal {
+    margin: 20px 0;
+    padding: 0;
+    overflow: visible !important;
+    position: relative;
+    z-index: 1000;
+}
+
+.menu-principal ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.menu-principal li {
+    position: relative;
+}
+
+.menu-principal a {
+    display: block;
+    padding: 10px 15px;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid var(--color-borde);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-principal a:hover {
+    background: var(--color-primario);
+    color: white;
+}
+
+.menu-principal a.activo {
+    background: var(--color-primario);
+    color: white;
+    border-color: var(--color-primario);
+}
+
+/* ==================== DROPDOWN (CORREGIDO) ==================== */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 250px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 100000;
+    margin-top: 5px;
+    border: 1px solid var(--color-borde);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--color-borde);
+    display: block;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: var(--color-fondo);
+    padding-left: 20px;
+    color: var(--color-primario);
+}
+
+.dropdown-content a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0;
+    background: var(--color-primario);
+    opacity: 0.1;
+    transition: width 0.2s ease;
+    border-radius: 5px 0 0 5px;
+}
+
+.dropdown-content a:hover::before {
+    width: 100%;
+}
+
+/* ==================== CONTENEDORES ==================== */
 .contenedor {
     max-width: 900px;
     margin: 0 auto;
@@ -30,6 +141,7 @@ body {
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: visible !important;
 }
 
 header {
@@ -37,6 +149,7 @@ header {
     border-bottom: 3px solid var(--color-primario);
     padding-bottom: 20px;
     margin-bottom: 30px;
+    overflow: visible !important;
 }
 
 h1 {
@@ -104,179 +217,38 @@ footer {
     font-size: 0.9em;
 }
 
-/* ============================================
-   PALETAS DE COLORES POR CLASE
-   ============================================ */
-
-/* --- Clase 1: Azul (Introducción) --- */
+/* ==================== PALETAS DE COLORES POR CLASE ==================== */
 body.clase-1 {
     --color-primario: #4A90E2;
     --color-secundario: #50E3C2;
     --color-fondo: #E3F2FD;
 }
 
-/* --- Clase 2: Verde (Taller 1) --- */
 body.clase-2 {
     --color-primario: #50E3C2;
     --color-secundario: #00C853;
     --color-fondo: #E8F5E9;
 }
 
-/* --- Clase 3: Naranja (Taller 2) --- */
 body.clase-3 {
     --color-primario: #FF9500;
     --color-secundario: #FF6D00;
     --color-fondo: #FFF3E0;
 }
 
-/* --- Clase 4: Morado (Taller 3) --- */
 body.clase-4 {
     --color-primario: #9C27B0;
     --color-secundario: #7B1FA2;
     --color-fondo: #F3E5F5;
 }
 
-/* --- Clase 5: Rojo (Taller 4) --- */
 body.clase-5 {
     --color-primario: #E53935;
     --color-secundario: #D32F2F;
     --color-fondo: #FFEBEE;
 }
 
-/* --- Responsive --- */
-@media (max-width: 768px) {
-    .contenedor {
-        padding: 20px;
-    }
-
-    h1 {
-        font-size: 2em;
-    }
-}
-
-/* ============================================
-   ESTILOS PARA EL ÍNDICE (INDEX.HTML)
-   ============================================ */
-
-/* Grid para las tarjetas */
-.grid-clases {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-/* Tarjeta individual */
-.card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--color-borde);
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-/* Cabecera de la tarjeta con color específico */
-.card-header {
-    padding: 15px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.card-header h3 {
-    margin: 0;
-    font-size: 1.2em;
-}
-
-.card-header span {
-    font-size: 0.9em;
-    opacity: 0.9;
-}
-
-/* Cuerpo de la tarjeta */
-.card-body {
-    padding: 20px;
-}
-
-.card-body h4 {
-    margin-top: 0;
-    color: var(--color-titulo);
-}
-
-.card-body p {
-    color: #666;
-    font-size: 0.95em;
-    margin-bottom: 20px;
-}
-
-/* Botones de las tarjetas */
-.btn {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s ease;
-    color: white;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-}
-
-.btn:hover {
-    opacity: 0.9;
-}
-
-/* Colores específicos para botones por clase */
-.btn-clase-1 {
-    background-color: #4A90E2;
-}
-
-.btn-clase-2 {
-    background-color: #50E3C2;
-}
-
-.btn-clase-3 {
-    background-color: #FF9500;
-}
-
-.btn-clase-4 {
-    background-color: #9C27B0;
-}
-
-.btn-clase-5 {
-    background-color: #E53935;
-}
-
-/* Cabeceras de tarjetas con colores específicos */
-.card-header.clase-1 {
-    background-color: #4A90E2;
-}
-
-.card-header.clase-2 {
-    background-color: #50E3C2;
-}
-
-.card-header.clase-3 {
-    background-color: #FF9500;
-}
-
-.card-header.clase-4 {
-    background-color: #9C27B0;
-}
-
-.card-header.clase-5 {
-    background-color: #E53935;
-}
-
-/* Fondo especial para el índice */
+/* ==================== ESTILOS PARA EL ÍNDICE ==================== */
 body.clase-index {
     background-color: #F0F2F5;
 }
@@ -303,43 +275,646 @@ body.clase-index footer {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* --- Estilos para imágenes de perfil (Guido van Rossum) --- */
-.img-perfil {
-    display: block;
-    /* Elimina el espacio inline por defecto */
-    max-width: 300px;
-    /* Tamaño máximo */
-    width: 100%;
-    /* Se adapta si la pantalla es más pequeña */
-    height: auto;
-    /* Mantiene la proporción */
-    margin: 20px auto;
-    /* Centra la imagen horizontalmente */
-    border-radius: 8px;
-    /* Bordes redondeados */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    /* Sombra suave */
+.grid-clases {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
 }
 
-/* Versión para móviles */
+.card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid var(--color-borde);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    padding: 15px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.card-header span {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h4 {
+    margin-top: 0;
+    color: var(--color-titulo);
+}
+
+.card-body p {
+    color: #666;
+    font-size: 0.95em;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    color: white;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* Colores específicos para las 11 clases */
+.card-header.clase-1 {
+    background: #4A90E2;
+}
+
+.card-header.clase-2 {
+    background: #50E3C2;
+}
+
+.card-header.clase-3 {
+    background: #F5A623;
+}
+
+.card-header.clase-4 {
+    background: #7ED321;
+}
+
+.card-header.clase-5 {
+    background: #BD10E0;
+}
+
+.card-header.clase-6 {
+    background: #9013FE;
+}
+
+.card-header.clase-7 {
+    background: #F8E71C;
+}
+
+.card-header.clase-8 {
+    background: #B8E986;
+}
+
+.card-header.clase-9 {
+    background: #FD5E53;
+}
+
+.card-header.clase-10 {
+    background: #FD9E53;
+}
+
+.card-header.clase-11 {
+    background: #FD539A;
+}
+
+.btn-clase-1 {
+    background: #4A90E2;
+    color: white;
+}
+
+.btn-clase-2 {
+    background: #50E3C2;
+    color: white;
+}
+
+.btn-clase-3 {
+    background: #F5A623;
+    color: white;
+}
+
+.btn-clase-4 {
+    background: #7ED321;
+    color: white;
+}
+
+.btn-clase-5 {
+    background: #BD10E0;
+    color: white;
+}
+
+.btn-clase-6 {
+    background: #9013FE;
+    color: white;
+}
+
+.btn-clase-7 {
+    background: #F8E71C;
+    color: black;
+}
+
+.btn-clase-8 {
+    background: #B8E986;
+    color: black;
+}
+
+.btn-clase-9 {
+    background: #FD5E53;
+    color: white;
+}
+
+.btn-clase-10 {
+    background: #FD9E53;
+    color: white;
+}
+
+.btn-clase-11 {
+    background: #FD539A;
+    color: white;
+}
+
+/* ==================== IMÁGENES ==================== */
+.img-perfil {
+    display: block;
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* ==================== LISTA DE TEMAS ==================== */
+.lista-temas {
+    column-count: 2;
+    column-gap: 40px;
+}
+
+.lista-temas li {
+    break-inside: avoid;
+    margin-bottom: 10px;
+}
+
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 768px) {
+    .contenedor {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
     .img-perfil {
         max-width: 200px;
         margin: 15px auto;
     }
+
+    .menu-principal ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu-principal li {
+        width: 100%;
+    }
+
+    .dropdown-content {
+        position: static;
+        min-width: 100%;
+        max-height: 300px;
+        overflow-y: auto;
+        box-shadow: none;
+        border: none;
+        background: var(--color-fondo);
+    }
+
+    .dropdown-content a {
+        padding-left: 30px;
+    }
+
+    .grid-clases {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   FUNCIONALIDADES EXTRA: BUSCADOR Y MODO OSCURO
+   ============================================ */
+
+/* --- Estilos del Buscador --- */
+.search-container {
+    margin: 20px 0 30px 0;
+    position: relative;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#search-input {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: 2px solid var(--color-borde);
+    border-radius: 25px;
+    background: white;
+    color: var(--color-texto);
+    outline: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#search-input:focus {
+    border-color: var(--color-primario);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+}
+
+#search-input::placeholder {
+    color: #aaa;
+}
+
+/* Botón de Modo Oscuro */
+.theme-toggle-btn {
+    background: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--color-texto);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.theme-toggle-btn:hover {
+    background: var(--color-primario);
+    color: white;
+    border-color: var(--color-primario);
+}
+
+/* --- MODO OSCURO (Clases) --- */
+body.dark-mode {
+    --color-fondo: #121212;
+    --color-texto: #e0e0e0;
+    --color-titulo: #ffffff;
+    --color-borde: #333333;
+    background-color: #121212;
+}
+
+body.dark-mode .contenedor {
+    background: #1e1e1e;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-mode header {
+    background: #252525;
+    border-bottom-color: #444;
+}
+
+body.dark-mode .info-meta {
+    background: linear-gradient(135deg, #3a7bc8, #2c3e50);
+}
+
+body.dark-mode .card {
+    background: #252525;
+    border-color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .card-body h4 {
+    color: #fff;
+}
+
+body.dark-mode .card-body p {
+    color: #bbb;
+}
+
+body.dark-mode .dropdown-content {
+    background: #252525;
+    border-color: #444;
+}
+
+body.dark-mode .dropdown-content a {
+    color: #e0e0e0;
+    border-bottom-color: #333;
+}
+
+body.dark-mode .dropdown-content a:hover {
+    background: #333;
+    color: var(--color-primario);
+}
+
+body.dark-mode footer {
+    background: #252525;
+    border-top-color: #333;
+    color: #aaa;
+}
+
+body.dark-mode #search-input {
+    background: #252525;
+    color: #fff;
+    border-color: #444;
+}
+
+body.dark-mode #search-input:focus {
+    border-color: var(--color-primario);
+}
+
+body.dark-mode .lista-temas li {
+    background: #252525;
+    color: #ddd;
+}
+
+/* Animación suave al filtrar */
+.card {
+    transition: all 0.3s ease;
+}
+
+/* ==================== NAVEGACIÓN ENTRE CLASES ==================== */
+.navegacion-clase {
+    margin-top: 40px;
+    padding: 25px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border-left: 5px solid var(--color-primario);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.navegacion-clase h3 {
+    margin-top: 0;
+    color: var(--color-titulo);
+    font-size: 1.2em;
+}
+
+.navegacion-botones {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.btn-nav {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-volver {
+    background: var(--color-fondo);
+    color: var(--color-texto);
+    border: 1px solid var(--color-borde);
+}
+
+.btn-volver:hover {
+    background: var(--color-primario);
+    color: white;
+    transform: translateX(-3px);
+}
+
+.btn-siguiente {
+    background: var(--color-primario);
+    color: white;
+    border: 1px solid var(--color-primario);
+}
+
+.btn-siguiente:hover {
+    background: var(--color-secundario);
+    transform: translateX(3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-    .img-perfil {
-        max-width: 200px;
-        margin: 15px auto;
+@media (max-width: 600px) {
+    .navegacion-clase {
+        padding: 15px;
+    }
+
+    .navegacion-botones {
+        flex-direction: column;
+    }
+
+    .btn-nav {
+        width: 100%;
+        justify-content: center;
     }
 }
 
-/* Responsive: más pequeña en móviles */
-@media (max-width: 768px) {
-    .img-perfil {
-        max-width: 200px;
-    }
+/* Clase activa en dropdown */
+.dropdown-content a.activo {
+    background: var(--color-primario);
+    color: white;
+    border-left: 3px solid var(--color-secundario);
+}
+
+/* ==================== DROPDOWN OPTIMIZADO (FIX PARPADEO) ==================== */
+
+/* Contenedor del botón */
+.dropdown {
+    position: relative;
+    /* 🔥 IMPORTANTE: El dropdown se posiciona relativo a esto */
+    cursor: pointer;
+}
+
+/* El contenido del dropdown */
+.dropdown-content {
+    display: none;
+    /* Oculto por defecto */
+    position: absolute;
+    top: 100%;
+    /* Justo debajo del botón */
+    left: 0;
+    /* Alineado a la izquierda del botón */
+    background: white;
+    min-width: 260px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 100000;
+    /* Muy alto */
+    margin-top: 5px;
+    border: 1px solid var(--color-borde);
+
+    /* Animación suave */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+/* Clase para mostrar (controlada por JS) */
+.dropdown-content.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Estilos de los enlaces dentro del dropdown */
+.dropdown-content a {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--color-borde);
+    display: block;
+    text-decoration: none;
+    color: var(--color-texto);
+    transition: background 0.2s;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.dropdown-content a:hover {
+    background: var(--color-fondo);
+    padding-left: 20px;
+    color: var(--color-primario);
+}
+
+/* Asegurar que el header no corte el dropdown */
+header {
+    overflow: visible !important;
+}
+
+.contenedor {
+    overflow: visible !important;
+}
+
+/* ==================== BARRA DE PROGRESO ==================== */
+.progreso-container {
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .progreso-container {
+    background: #252525;
+}
+
+.progreso-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--color-titulo);
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 25px;
+    background: #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .barra-progreso {
+    background: #333;
+}
+
+.barra-llena {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primario), var(--color-secundario));
+    transition: width 0.5s ease;
+    border-radius: 12px;
+}
+
+.btn-reset {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: var(--color-texto);
+    transition: all 0.3s;
+}
+
+.btn-reset:hover {
+    background: #ff6b6b;
+    color: white;
+    border-color: #ff6b6b;
+}
+
+/* ==================== BARRA DE PROGRESO ==================== */
+.progreso-container {
+    margin: 20px auto;
+    max-width: 500px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .progreso-container {
+    background: #252525;
+}
+
+.progreso-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: var(--color-titulo);
+}
+
+.barra-progreso {
+    width: 100%;
+    height: 25px;
+    background: #e0e0e0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .barra-progreso {
+    background: #333;
+}
+
+.barra-llena {
+    height: 100%;
+    background: linear-gradient(90deg, var(--color-primario), var(--color-secundario));
+    transition: width 0.5s ease;
+    border-radius: 12px;
+}
+
+.btn-reset {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    color: var(--color-texto);
+    transition: all 0.3s;
+}
+
+.btn-reset:hover {
+    background: #ff6b6b;
+    color: white;
+    border-color: #ff6b6b;
 }
